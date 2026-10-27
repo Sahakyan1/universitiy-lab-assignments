@@ -1,6 +1,6 @@
 using System;
 
-    internal class Executor
+    internal class Program
     {
         static int CalculateTotal(params int[] items)
         {
