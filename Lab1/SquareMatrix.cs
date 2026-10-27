@@ -39,26 +39,22 @@ namespace ConsoleApp2
         {
             matrix = new int[n, n];
             Random rnd = new Random();
-            int row = 0;
-            while (row < n)
+            for (int i = 0; i < n; i++)
             {
-                int col = 0;
-                while (col < n)
+                for (int j = 0; j < n; j++)
                 {
-                    matrix[row, col] = rnd.Next(a, b + 1);
-                    col++;
+                    matrix[i, j] = rnd.Next(a, b + 1);
                 }
-                row++;
             }
         }
 
         public void ShowMatrix()
         {
-            for (int r = 0; r < n; r++)
+            for (int i = 0; i < n; i++)
             {
-                for (int c = 0; c < n; c++)
+                for (int j = 0; j < n; j++)
                 {
-                    Console.Write($"{matrix[r, c],4} ");
+                    Console.Write($"{matrix[i, j],4} ");
                 }
                 Console.WriteLine();
             }
@@ -66,15 +62,18 @@ namespace ConsoleApp2
 
         public int GetOddNumberCount()
         {
-            int totalOdds = 0;
-            foreach (int val in matrix)
+            int count = 0;
+            for (int i = 0; i < n; i++)
             {
-                if (val % 2 != 0)
+                for (int j = 0; j < n; j++)
                 {
-                    totalOdds++;
+                    if (matrix[i, j] % 2 != 0)
+                    {
+                        count++;
+                    }
                 }
             }
-            return totalOdds;
+            return count;
         }
     }
 }
