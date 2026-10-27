@@ -5,7 +5,7 @@ class Program
     static int MultiplyValues(int value, int count = 2)
     {
         int total = 0;
-        for (int k = 0; k < count; k++)
+        for (int i = 0; i < count; i++)
         {
             total += value;
         }
@@ -15,7 +15,7 @@ class Program
     static double MultiplyValues(double value, int count = 2)
     {
         double total = 0;
-        for (int k = 0; k < count; k++)
+        for (int i = 0; i < count; i++)
         {
             total += value;
         }
@@ -25,7 +25,7 @@ class Program
     static string MultiplyValues(string value, int count = 2)
     {
         string combined = string.Empty;
-        for (int k = 0; k < count; k++)
+        for (int i = 0; i < count; i++)
         {
             combined += value;
         }
