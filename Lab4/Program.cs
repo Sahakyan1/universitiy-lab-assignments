@@ -11,6 +11,10 @@ using System;
             }
             return total;
         }
+        static void PrintInfo(string name, int age = 18)
+         {
+        Console.WriteLine($"Name: {name}, Age: {age}");
+         }
 
         static void PrintReadOnly(in int val)
         {
@@ -40,5 +44,7 @@ using System;
             Console.WriteLine($"out t: {resultNum}");
             DoubleValue(ref num);
             Console.WriteLine($"ref yy: {num}");
+            PrintInfo("Anna");
+            PrintInfo("Aram", 25);
         }
     }
