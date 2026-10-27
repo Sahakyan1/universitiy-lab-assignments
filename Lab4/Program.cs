@@ -1,44 +1,44 @@
 using System;
 
-    internal class Program
+    internal class Executor
     {
-        static int SumValues(params int[] numbers)
+        static int CalculateTotal(params int[] items)
         {
-            int sum = 0;
-            foreach (int n in numbers)
+            int total = 0;
+            foreach (int val in items)
             {
-                sum += n;
+                total += val;
             }
-            return sum;
+            return total;
         }
 
-        static void A(in int x)
+        static void PrintReadOnly(in int val)
         {
-            Console.WriteLine($"in value: {x}");
+            Console.WriteLine($"in value: {val}");
         }
 
-        static void B(out int x)
+        static void AssignValue(out int val)
         {
-            x = 100;
+            val = 100;
         }
 
-        static void C(ref int x)
+        static void DoubleValue(ref int val)
         {
-            x = x * 2;
+            val = val * 2;
         }
 
         static void Main(string[] args)
         {
-            int yy = 44;
-            int t;
+            int num = 44;
+            int resultNum;
 
-            int result = SumValues(10, 20, 30, 40);
-            Console.WriteLine(result);
-            Console.WriteLine(SumValues(10, 20, 30, 40));
-            A(in yy);
-            B(out t);
-            Console.WriteLine($"out t: {t}");
-            C(ref yy);
-            Console.WriteLine($"ref yy: {yy}");
+            int outcome = CalculateTotal(10, 20, 30, 40);
+            Console.WriteLine(outcome);
+            Console.WriteLine(CalculateTotal(10, 20, 30, 40));
+            PrintReadOnly(in num);
+            AssignValue(out resultNum);
+            Console.WriteLine($"out t: {resultNum}");
+            DoubleValue(ref num);
+            Console.WriteLine($"ref yy: {num}");
         }
     }
