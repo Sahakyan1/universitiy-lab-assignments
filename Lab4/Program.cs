@@ -1,6 +1,6 @@
 using System;
 
-    internal class Program
+ class Program
     {
         static int CalculateTotal(params int[] items)
         {
